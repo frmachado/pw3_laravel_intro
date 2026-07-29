@@ -17,12 +17,11 @@ class ProdutoController extends Controller
     {
         $dados = $request->validate([
             'nome' => 'required|min:3',
-            'preco' => 'required|numeric|min:3',
-            'estoque' => 'required|interger|min:0'
+            'preco' => 'required|numeric|min:0',
+            'estoque' => 'required|integer|min:0',
         ]);
 
         Produto::create($dados);
-
         return redirect('/produtos');
 
     }
