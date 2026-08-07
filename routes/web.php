@@ -1,8 +1,11 @@
 <?php
-use App\Http\Controllers\LivroController;
 
-Route::get('/livros', [LivroController::class, 'index'])
-    ->name('livros.index');
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProdutoController;
 
-Route::post('/livros', [LivroController::class, 'store'])
-    ->name('livros.store');
+Route::get('/', function () {
+    return view('home');
+});
+
+Route::get('/produtos', [ProdutoController::class, 'index']);
+Route::post('/produtos', [ProdutoController::class, 'store']);
