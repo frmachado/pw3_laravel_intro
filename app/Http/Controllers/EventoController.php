@@ -38,7 +38,6 @@ class EventoController extends Controller
 
         Evento::create($dadosValidados);
 
-        // Volta para /eventos com mensagem de sucesso
         return redirect()
             ->route('eventos.index')
             ->with('success', 'Evento cadastrado com sucesso!');
